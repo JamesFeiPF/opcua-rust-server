@@ -1,0 +1,55 @@
+name,node_id,data_type,initial_value,description,unit,readonly,changerate
+Temperature_Sensor_1,ns=2;s=Temperature_Sensor_1,Double,25.5,"Temperature sensor reading",°C,false,0
+Pressure_Sensor_1,ns=2;s=Pressure_Sensor_1,Double,1013.25,"Pressure sensor reading",hPa,false,0
+Flow_Rate_1,ns=2;s=Flow_Rate_1,Double,150.0,"Flow rate measurement",L/min,false,0
+Level_Sensor_1,ns=2;s=Level_Sensor_1,Double,75.5,"Tank level sensor",%,false,0
+Vibration_Sensor_1,ns=2;s=Vibration_Sensor_1,Double,2.3,"Vibration amplitude",mm/s,false,0
+
+# Readonly sensors (simulated data with change rates)
+Ambient_Temperature,ns=2;s=Ambient_Temperature,Double,22.0,"Ambient temperature",°C,true,0.1
+Humidity,ns=2;s=Humidity,Double,45.0,"Relative humidity",%,true,0.05
+Wind_Speed,ns=2;s=Wind_Speed,Double,5.5,"Wind speed",m/s,true,0.2
+Solar_Radiation,ns=2;s=Solar_Radiation,Double,800.0,"Solar radiation intensity",W/m²,true,1.0
+Air_Quality_PM25,ns=2;s=Air_Quality_PM25,Double,15.0,"PM2.5 concentration",µg/m³,true,0.02
+Noise_Level,ns=2;s=Noise_Level,Double,42.0,"Ambient noise level",dB,true,0.15
+
+# More writable control tags
+Pump_Speed_1,ns=2;s=Pump_Speed_1,Double,1800.0,"Pump 1 speed",RPM,false,0
+Valve_Position_1,ns=2;s=Valve_Position_1,Double,50.0,"Valve 1 position",%,false,0
+Motor_Current_1,ns=2;s=Motor_Current_1,Double,15.5,"Motor 1 current",A,false,0
+Heater_Power_1,ns=2;s=Heater_Power_1,Double,75.0,"Heater 1 power",%,false,0
+Cooling_Fan_Speed,ns=2;s=Cooling_Fan_Speed,Double,1200.0,"Cooling fan speed",RPM,false,0
+
+# Additional readonly process variables
+Process_Temperature,ns=2;s=Process_Temperature,Double,85.0,"Main process temperature",°C,true,0.3
+Process_Pressure,ns=2;s=Process_Pressure,Double,250.0,"Main process pressure",kPa,true,0.5
+Reactor_Level,ns=2;s=Reactor_Level,Double,85.0,"Reactor liquid level",%,true,0.1
+Chemical_Concentration,ns=2;s=Chemical_Concentration,Double,12.5,"Chemical concentration",g/L,true,0.02
+pH_Value,ns=2;s=pH_Value,Double,7.2,"Process pH value",pH,true,0.01
+Conductivity,ns=2;s=Conductivity,Double,2500.0,"Water conductivity",µS/cm,true,1.0
+
+# Control setpoints (writable)
+Temperature_Setpoint,ns=2;s=Temperature_Setpoint,Double,90.0,"Temperature control setpoint",°C,false,0
+Pressure_Setpoint,ns=2;s=Pressure_Setpoint,Double,300.0,"Pressure control setpoint",kPa,false,0
+Flow_Setpoint,ns=2;s=Flow_Setpoint,Double,200.0,"Flow control setpoint",L/min,false,0
+Level_Setpoint,ns=2;s=Level_Setpoint,Double,80.0,"Level control setpoint",%,false,0
+pH_Setpoint,ns=2;s=pH_Setpoint,Double,7.0,"pH control setpoint",pH,false,0
+
+# System status (readonly)
+System_Status,ns=2;s=System_Status,Double,1.0,"Overall system status",code,true,0
+Alarm_Count,ns=2;s=Alarm_Count,Double,0.0,"Active alarm count",count,true,0
+Uptime_Hours,ns=2;s=Uptime_Hours,Double,168.0,"System uptime",hours,true,0.0007
+CPU_Usage,ns=2;s=CPU_Usage,Double,25.0,"CPU usage percentage",%,true,0.5
+Memory_Usage,ns=2;s=Memory_Usage,Double,60.0,"Memory usage percentage",%,true,0.3
+
+# Manual control tags (writable)
+Emergency_Stop,ns=2;s=Emergency_Stop,Double,0.0,"Emergency stop command",bool,false,0
+Manual_Mode,ns=2;s=Manual_Mode,Double,0.0,"Manual mode enable",bool,false,0
+Reset_Alarms,ns=2;s=Reset_Alarms,Double,0.0,"Reset all alarms",bool,false,0
+Calibrate_Sensors,ns=2;s=Calibrate_Sensors,Double,0.0,"Start sensor calibration",bool,false,0
+
+# Batch process parameters
+Batch_Number,ns=2;s=Batch_Number,Double,1001.0,"Current batch number",number,false,0
+Batch_Size,ns=2;s=Batch_Size,Double,1000.0,"Batch size",L,false,0
+Batch_Progress,ns=2;s=Batch_Progress,Double,0.0,"Batch completion progress",%,true,0.1
+Estimated_Time_Remaining,ns=2;s=Estimated_Time_Remaining,Double,120.0,"Estimated time to completion",minutes,true,0.5
